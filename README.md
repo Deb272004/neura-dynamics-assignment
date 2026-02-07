@@ -80,9 +80,9 @@ The baseline prompt focused on simple instruction following:
 ])".
 
 <p align="center">
-  <img src="/home/deblina/Documents/projects/neura dynamics assignment/screenshots/Screenshot from 2026-02-07 12-55-21.png" width="90%" alt="Trace Details">
+  <img src="/screenshots/Screenshot from 2026-02-07 12-55-21.png" width="90%" alt="Trace Details">
   <br>
-  <em>Detailed trace showing 1.0 correctness on policy queries.</em>
+  <em>result with initial prompt</em>
 </p>
 
 Improved Iteration
@@ -129,9 +129,9 @@ CONTEXT_QA_PROMPT = ChatPromptTemplate.from_messages([
 .".
 
 <p align="center">
-  <img src="/home/deblina/Documents/projects/neura dynamics assignment/screenshots/Screenshot from 2026-02-07 12-57-36.png" width="90%" alt="Trace Details">
+  <img src="/screenshots/Screenshot from 2026-02-07 12-57-36.png" width="90%" alt="Trace Details">
   <br>
-  <em>Detailed trace showing 1.0 correctness on policy queries.</em>
+  <em>result with updated prompt</em>
 </p>
 
 Why it changed: The initial prompt sometimes produced conversational filler. The iteration enforced a structured format (headings/bullets) and improved the handling of partially answerable questions.
@@ -159,7 +159,7 @@ Key Insights
     Efficiency: Average token usage remained stable (~9,300 tokens), confirming efficient context window management.
 
 <p align="center">
-  <img src="/home/deblina/Documents/projects/neura dynamics assignment/screenshots/Screenshot from 2026-02-07 12-21-16.png" width="90%" alt="Trace Details">
+  <img src="/screenshots/Screenshot from 2026-02-07 12-21-16.png" width="90%" alt="Trace Details">
   <br>
   <em>Detailed trace showing 1.0 correctness on policy queries.</em>
 </p>
