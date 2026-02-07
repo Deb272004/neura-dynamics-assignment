@@ -1,0 +1,37 @@
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: GET https://huggingface.co/api/models/qdrant/bge-small-en-v1.5-onnx-q "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: GET https://huggingface.co/api/models/Qdrant/bge-small-en-v1.5-onnx-Q "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/models/qdrant/bge-small-en-v1.5-onnx-q/tree/52398278842ec682c6f32300af41344b1c0b0bb2?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: GET https://huggingface.co/api/models/Qdrant/bge-small-en-v1.5-onnx-Q/tree/52398278842ec682c6f32300af41344b1c0b0bb2?recursive=false&expand=false "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/models/qdrant/bge-small-en-v1.5-onnx-q/revision/main "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: GET https://huggingface.co/api/models/Qdrant/bge-small-en-v1.5-onnx-Q/revision/main "HTTP/1.1 200 OK"
+HTTP Request: HEAD https://huggingface.co/qdrant/bge-small-en-v1.5-onnx-q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/config.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/qdrant/bge-small-en-v1.5-onnx-q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/qdrant/bge-small-en-v1.5-onnx-q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/qdrant/bge-small-en-v1.5-onnx-q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/Qdrant/bge-small-en-v1.5-onnx-Q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/config.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/qdrant/bge-small-en-v1.5-onnx-q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/model_optimized.onnx "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/config.json "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/config.json "HTTP/1.1 200 OK"
+HTTP Request: HEAD https://huggingface.co/Qdrant/bge-small-en-v1.5-onnx-Q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/Qdrant/bge-small-en-v1.5-onnx-Q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/model_optimized.onnx "HTTP/1.1 302 Found"
+HTTP Request: HEAD https://huggingface.co/Qdrant/bge-small-en-v1.5-onnx-Q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/Qdrant/bge-small-en-v1.5-onnx-Q/resolve/52398278842ec682c6f32300af41344b1c0b0bb2/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer.json "HTTP/1.1 200 OK"
+HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer_config.json "HTTP/1.1 200 OK"
+HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/special_tokens_map.json "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer.json "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/tokenizer_config.json "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/bge-small-en-v1.5-onnx-Q/52398278842ec682c6f32300af41344b1c0b0bb2/special_tokens_map.json "HTTP/1.1 200 OK"
+HTTP Request: GET https://huggingface.co/api/models/Qdrant/bge-small-en-v1.5-onnx-Q/xet-read-token/52398278842ec682c6f32300af41344b1c0b0bb2 "HTTP/1.1 200 OK"
+Loading faiss with AVX2 support.
+Successfully loaded faiss with AVX2 support.
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Failed to get info from https://api.smith.langsmith.com: LangSmithConnectionError('Connection error caused failure to GET /info in LangSmith API. Please confirm your LANGCHAIN_ENDPOINT. ConnectionError(MaxRetryError(\'HTTPSConnectionPool(host=\\\'api.smith.langsmith.com\\\', port=443): Max retries exceeded with url: /info (Caused by NameResolutionError("HTTPSConnection(host=\\\'api.smith.langsmith.com\\\', port=443): Failed to resolve \\\'api.smith.langsmith.com\\\' ([Errno -2] Name or service not known)"))\'))\nContent-Length: None\nAPI Key: lsv2_********************************************9d')
+Run compression is not enabled. Please update to the latest version of LangSmith. Falling back to regular multipart ingestion.
+Failed to multipart ingest runs: Connection error caused failure to POST https://api.smith.langsmith.com/runs/multipart in LangSmith API. Please confirm your LANGCHAIN_ENDPOINT. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langsmith.com\', port=443): Max retries exceeded with url: /runs/multipart (Caused by NameResolutionError("HTTPSConnection(host=\'api.smith.langsmith.com\', port=443): Failed to resolve \'api.smith.langsmith.com\' ([Errno -2] Name or service not known)"))'))
+Content-Length: 55566
+API Key: lsv2_********************************************9dtrace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3410-72c0-b795-9dbf2f31208b; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3418-7833-bd50-8c3dde48c38b; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3419-7573-8c65-3437b6312489; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3419-7573-8c65-34467538cb7c; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-341d-76a3-a86a-73881794a87b; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-341f-72a0-8d91-272696a5087f; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3421-79a2-9f50-46c4968c4e77; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3423-7a80-8456-ee6d30722e5b; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3588-7471-a6ae-4d2991251381; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3589-7652-a03c-c68951b634d7; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-35a9-78b3-b1bd-27c5657d7327; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-341a-7383-ab20-11e9959fa4e3; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-341c-7680-bc76-9437f5a5c0a3; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-35ad-7670-a713-a5568bb8c447; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-35ae-7081-b143-ec52fcd39cc7; trace=019c3363-3410-72c0-b795-9dbf2f31208b,id=019c3363-3672-7103-ad58-570208cfde49

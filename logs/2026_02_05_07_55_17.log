@@ -1,0 +1,3 @@
+Loading embedding model: BBAI/bge-small-en-v1.5
+Loading faiss with AVX2 support.
+Successfully loaded faiss with AVX2 support.

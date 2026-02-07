@@ -1,0 +1,18 @@
+embedding_model:
+    provider: fastembed
+    model_name: BBAI/bge-small-en-v1.5
+
+retriever:
+    search_type: mmr
+    top_k: 10
+    k: 5
+    fetched_k : 5
+    lambda_mult: 0.5
+
+
+llm:
+    groq:
+        provider: groq
+        model_name : llama-3.1-8b-instant
+        temperature: 0.2
+        max_output_token: 2048

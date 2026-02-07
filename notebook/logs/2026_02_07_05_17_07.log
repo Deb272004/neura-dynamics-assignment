@@ -1,0 +1,806 @@
+Loading embedding model: BBAI/bge-small-en-v1.5
+Loading faiss with AVX2 support.
+Successfully loaded faiss with AVX2 support.
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-878b-7093-a14d-e04408d1ec34: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output provides accurate and complete information about the holidays observed by the company. However, it incorrectly states that other holidays are observed, which is not mentioned in the reference output. Additionally, the output does not address the payment for employees, which is partially correct but does not specify that it depends on the employer\\\'s selection. Thus, the score should be: False"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output provides accurate and complete information about the holidays observed by the company. However, it incorrectly states that other holidays are observed, which is not mentioned in the reference output. Additionally, the output does not address the payment for employees, which is partially correct but does not specify that it depends on the employer\'s selection. Thus, the score should be: False"} </function>'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-8a58-7ed0-9134-f2382f9e18fb: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output provides accurate and complete information, addresses all parts of the question, and uses precise terminology. However, the output contains a few minor factual errors and inaccuracies compared to the reference output. Specifically, the output mentions that the policy is in place to protect the company\\\'s property, whereas the reference output states that it is to protect the company\\\'s computer systems and data. Thus, the score should be: False"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output provides accurate and complete information, addresses all parts of the question, and uses precise terminology. However, the output contains a few minor factual errors and inaccuracies compared to the reference output. Specifically, the output mentions that the policy is in place to protect the company\'s property, whereas the reference output states that it is to protect the company\'s computer systems and data. Thus, the score should be: False"} </function>'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-8c86-75e0-920e-2129dc2f5c2d: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output contains factual errors, as it mentions consulting an authorized person for the amount of paid sick leave, whereas the reference output only mentions that the specific number of days is not defined and must be filled in by the employer. The output also provides additional information about potential disciplinary action, which is not present in the reference output. Thus, the score should be: False"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output contains factual errors, as it mentions consulting an authorized person for the amount of paid sick leave, whereas the reference output only mentions that the specific number of days is not defined and must be filled in by the employer. The output also provides additional information about potential disciplinary action, which is not present in the reference output. Thus, the score should be: False"} </function>'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-8e6e-7f20-b493-d58929b660fc: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01jeqezczeeh29rft6bvvhem0m` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5951, Requested 910. Please try again in 8.61s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01jeqezczeeh29rft6bvvhem0m` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5951, Requested 910. Please try again in 8.61s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-a98b-78b1-94e5-fbb760dc56f8: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output does not directly provide an answer to the question, instead suggesting that the employee handbook or HR representative would have the information. It does mention that the company provides health benefits, but does not address childcare subsidies or commuter benefits. This is incomplete and misleading. The correct answer from the reference output states that the document does not mention childcare subsidies or commuter benefits, which is a clear and accurate response to the question. Thus, the score should be: False"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output does not directly provide an answer to the question, instead suggesting that the employee handbook or HR representative would have the information. It does mention that the company provides health benefits, but does not address childcare subsidies or commuter benefits. This is incomplete and misleading. The correct answer from the reference output states that the document does not mention childcare subsidies or commuter benefits, which is a clear and accurate response to the question. Thus, the score should be: False"} </function>'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 11.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368a-d3e2-77d0-bdf7-3f9a2ac58b78: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01jeqezczeeh29rft6bvvhem0m` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5793, Requested 1222. Please try again in 10.15s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01jeqezczeeh29rft6bvvhem0m` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5793, Requested 1222. Please try again in 10.15s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368b-1f8e-7e91-a444-59c96685d2c1: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output provides accurate and complete information, but it contains some extraneous details. The policy on pirated software is correctly stated, but the reference output does not mention potential viruses and misuse. The output also includes a statement about the employee handbook and the company\\\'s right to revise policies, which is not present in the reference output. Thus, the score should be: False"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output provides accurate and complete information, but it contains some extraneous details. The policy on pirated software is correctly stated, but the reference output does not mention potential viruses and misuse. The output also includes a statement about the employee handbook and the company\'s right to revise policies, which is not present in the reference output. Thus, the score should be: False"} </function>'}}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368b-4a00-7ac0-93ff-d31161302713: BadRequestError('Error code: 400 - {\'error\': {\'message\': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: \'score\']", \'type\': \'invalid_request_error\', \'code\': \'tool_use_failed\', \'failed_generation\': \'<function=score> {"reasoning": "The output is factually accurate and complete. It addresses the question and provides a correct representation of the company\\\'s policy. The only difference between the output and the reference output is the wording, which is not penalized as it does not affect the factual correctness of the response. Thus, the score should be: True"} </function>\'}}')
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 332, in evaluate_run
+    result = self.func(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 758, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_9517/2393490154.py", line 45, in correctness_evaluator
+    result = evaluator(
+             ^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 566, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 219, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/utils.py", line 132, in _run_scorer
+    score = scorer(**kwargs)
+            ^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/openevals/llm.py", line 250, in get_score
+    response = judge_with_structured_output.invoke(messages)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3151, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5691, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langchain_groq/chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "tool call validation failed: parameters for tool score did not match schema: errors: [missing properties: 'score']", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=score> {"reasoning": "The output is factually accurate and complete. It addresses the question and provides a correct representation of the company\'s policy. The only difference between the output and the reference output is the wording, which is not penalized as it does not affect the factual correctness of the response. Thus, the score should be: True"} </function>'}}
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-adf6-7a12-81ee-8d043249c480: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-b0a5-7d72-909c-013a237089d4: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-b326-78c3-ae1d-794807f655d1: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-b58f-71f2-a999-a612d551b3ba: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-b8c0-7ba1-b574-893f34696fa0: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-bab9-7dc0-9efb-f6064ec841e2: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+Error running evaluator <DynamicRunEvaluator correctness_evaluator> on run 019c368d-dc9a-7bf2-8398-c56bb3a2b51b: ValueError("Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}")
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 254, in _coerce_evaluation_result
+    return EvaluationResult(**{"source_run_id": source_run_id, **result})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for EvaluationResult
+reasoning
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Evaluation failed after ...EY environment variable', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/_runner.py", line 1601, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 337, in evaluate_run
+    return self._format_result(result, evaluator_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 290, in _format_result
+    return self._coerce_evaluation_results(result, source_run_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 274, in _coerce_evaluation_results
+    return self._coerce_evaluation_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deblina/Documents/projects/neura dynamics assignment/.venv/lib/python3.12/site-packages/langsmith/evaluation/evaluator.py", line 256, in _coerce_evaluation_result
+    raise ValueError(
+ValueError: Expected an EvaluationResult object, or dict with a metric 'key' and optional 'score'; got {'score': 0, 'reasoning': 'Evaluation failed after 3 attempts: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable', 'key': 'correctness_evaluator'}
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+Initializing LLM: groq | Model: llama-3.1-8b-instant
+Loading embedding model: BBAI/bge-small-en-v1.5
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 8.000000 seconds

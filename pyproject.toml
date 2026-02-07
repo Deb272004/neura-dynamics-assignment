@@ -1,0 +1,29 @@
+[project]
+name = "neura-dynamics-assignment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "docx2txt>=0.9",
+    "faiss-cpu>=1.13.2",
+    "fastapi>=0.128.0",
+    "fastembed>=0.7.4",
+    "ipykernel>=7.1.0",
+    "langchain>=1.2.8",
+    "langchain-classic>=1.0.1",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.8",
+    "langchain-google-genai>=4.2.0",
+    "langchain-groq>=1.1.2",
+    "langsmith>=0.6.8",
+    "openeval>=0.0.3",
+    "openevals>=0.1.3",
+    "pandas>=3.0.0",
+    "pydantic>=2.12.5",
+    "pypdf>=6.6.2",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.22",
+    "structlog>=25.5.0",
+    "uvicorn>=0.40.0",
+]
