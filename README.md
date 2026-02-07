@@ -166,7 +166,7 @@ Efficiency: Average token usage remained stable (~9,300 tokens), confirming effi
 
 ## 🛠️ Setup Instructions
 
-    Clone the Repo: git clone [your-repo-link].
+    Clone the Repo: git clone https://github.com/Deb272004/neura-dynamics-assignment.git
 
     Install Dependencies: pip install -r requirements.txt.
 
