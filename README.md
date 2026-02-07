@@ -77,7 +77,7 @@ The baseline prompt focused on simple instruction following:
     ),
     MessagesPlaceholder("chat_history"),
     ("human", "{input}")
-])".
+    ])".
 
 <p align="center">
   <img src="/screenshots/Screenshot from 2026-02-07 12-55-21.png" width="90%" alt="Trace Details">
@@ -125,7 +125,7 @@ CONTEXT_QA_PROMPT = ChatPromptTemplate.from_messages([
     ),
     MessagesPlaceholder("chat_history"),
     ("human", "{input}")
-])
+    ])
 .".
 
 <p align="center">
@@ -152,11 +152,11 @@ Error Rate
 0% (Consistent hallucination avoidance) 
 Key Insights
 
-    Consistency: The system maintained a stable 75% correctness rate across multiple runs, indicating high reproducibility.
+Consistency: The system maintained a stable 75% correctness rate across multiple runs, indicating high reproducibility.
 
-    Systematic Gaps: Failures occurred consistently on complex "list-based" queries (e.g., "Under what conditions is an employee eligible..."). This suggests the information might be spread across multiple chunks that MMR is currently deprioritizing.
+Systematic Gaps: Failures occurred consistently on complex "list-based" queries (e.g., "Under what conditions is an employee eligible..."). This suggests the information might be spread across multiple chunks that MMR is currently deprioritizing.
 
-    Efficiency: Average token usage remained stable (~9,300 tokens), confirming efficient context window management.
+Efficiency: Average token usage remained stable (~9,300 tokens), confirming efficient context window management.
 
 <p align="center">
   <img src="/screenshots/Screenshot from 2026-02-07 12-21-16.png" width="90%" alt="Trace Details">
@@ -179,9 +179,9 @@ Recursive Character Text Splitting
 
 For this project, I implemented the RecursiveCharacterTextSplitter.
 
-    Why it was chosen: The current policy documents consist of relatively small, well-defined sections. This splitter is ideal as it attempts to keep related pieces of text (like paragraphs and sentences) together by recursing through a list of characters (\n\n, \n,      , ""), maintaining the semantic context of each policy rule.
+Why it was chosen: The current policy documents consist of relatively small, well-defined sections. This splitter is ideal as it attempts to keep related pieces of text (like paragraphs and sentences) together by recursing through a list of characters (\n\n, \n,      , ""), maintaining the semantic context of each policy rule.
 
-    Current Performance: Given the small scale of the current "Small Business" policy files, this strategy worked effectively to produce chunks that fit well within the LLM's context window while preserving ground truth.
+Current Performance: Given the small scale of the current "Small Business" policy files, this strategy worked effectively to produce chunks that fit well within the LLM's context window while preserving ground truth.
 
 Future Scalability & Adaptability
 
