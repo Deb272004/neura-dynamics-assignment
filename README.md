@@ -196,9 +196,9 @@ I designed the document_ingestion.py module with modularity in mind to handle fu
 Refining a RAG system involves balancing speed, accuracy, and resource constraints. Below are the current trade-offs made during development and the roadmap for future scalability.
 Current Trade-offs
 
-    MMR vs. Top-K Retrieval: We utilized Maximal Marginal Relevance (MMR) to reduce redundancy in the context window. While this improved response speed and diversity, it occasionally caused the model to miss granular supporting details required for complex, multi-item lists found in certain policy sections.
+MMR vs. Top-K Retrieval: We utilized Maximal Marginal Relevance (MMR) to reduce redundancy in the context window. While this improved response speed and diversity, it occasionally caused the model to miss granular supporting details required for complex, multi-item lists found in certain policy sections.
 
-    Prompt Specificity: The system uses a structured prompt to enforce hallucination control. The trade-off is a more "rigid" output that may lack conversational flow in favor of strict factual grounding.
+Prompt Specificity: The system uses a structured prompt to enforce hallucination control. The trade-off is a more "rigid" output that may lack conversational flow in favor of strict factual grounding.
 
 Future Work & Scalability
 1. Improving Accuracy
@@ -214,3 +214,23 @@ Future Work & Scalability
     Memory Efficiency: For environments with memory constraints, Product Quantization (PQ) will be implemented to compress vector embeddings without significant loss in retrieval precision.
 
     Advanced Backend: The current CLI-based script can be evolved into a full-scale backend (FastAPI/Docker) to support multiple concurrent users and persistent semantic retrieval.
+
+
+## 🌟 Key Achievements
+1. Production-Ready Modular Design
+
+Built using modular programming principles rather than monolithic scripts. By decoupling ingestion, retrieval, and configuration, the system is both scalable (e.g., swapping FAISS for Pinecone) and maintainable.
+2. Empirical Evaluation (LangSmith)
+
+I moved beyond "vibe checks" by implementing a Golden Dataset and using LangSmith to monitor:
+
+    Correctness (0.75): Quantifying accuracy to identify specific failure points in complex queries.
+
+    Efficiency: Tracking P50 latency (6.68s) and token usage to optimize cost and UX.
+
+3. Advanced Prompt Engineering
+
+Transitioned from basic instructions to a structured framework (Role, Goal, Guardrails). This minimized hallucinations and integrated legal-style disclaimers (e.g., at-will employment, no privacy expectations) to ensure corporate compliance.
+4. Strategic Retrieval & Roadmap
+
+Implemented MMR (Maximal Marginal Relevance) to ensure information diversity. I have a clear technical roadmap—including Cross-Encoder Reranking and Hybrid Search (BM25)—to break the 75% accuracy ceiling for complex list-based queries.
