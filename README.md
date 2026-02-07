@@ -90,8 +90,8 @@ Improved Iteration
 The prompt was updated to include specific formatting constraints and "graceful failure" instructions:
 
     "
-CONTEXT_QA_PROMPT = ChatPromptTemplate.from_messages([
-    (
+        CONTEXT_QA_PROMPT = ChatPromptTemplate.from_messages([
+       (
         "system",
         "### 1. ROLE\n"
         "You are a Senior HR Policy Advisor. Your responsibility is to provide employees"
